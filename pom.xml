@@ -1,19 +1,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <parent>
-        <groupId>com.github.davidmoten</groupId>
-        <artifactId>sonatype-parent</artifactId>
-        <version>0.1</version>
-    </parent>
+	<parent>
+		<groupId>de.gebit.build</groupId>
+		<artifactId>gebit-build</artifactId>
+		<version>1.2.20</version>
+	</parent>
 
-    <artifactId>decrypt-maven-plugin</artifactId>
-    <packaging>maven-plugin</packaging>
-    <version>0.1.3-SNAPSHOT</version>
-
-    <properties>
-        <maven.compiler.target>1.7</maven.compiler.target>
-        <scm.url>scm:git:https://github.com/davidmoten/decrypt-maven-plugin.git</scm.url>
-    </properties>
+	<artifactId>decrypt-maven-plugin</artifactId>
+	<groupId>de.gebit.build.maven</groupId>
+	<packaging>maven-plugin</packaging>
+	<version>1.0.0-SNAPSHOT</version>
 
     <licenses>
         <license>
@@ -23,16 +19,6 @@
             <comments>A business-friendly OSS license</comments>
         </license>
     </licenses>
-
-    <ciManagement>
-        <system>Travis</system>
-        <url>https://travis-ci.org/davidmoten/decrypt-maven-plugin</url>
-    </ciManagement>
-
-    <issueManagement>
-        <system>GitHub</system>
-        <url>https://github.com/davidmoten/decrypt-maven-plugin/issues</url>
-    </issueManagement>
 
     <inceptionYear>2016</inceptionYear>
     <developers>
@@ -48,12 +34,25 @@
         </developer>
     </developers>
 
-    <scm>
-        <connection>${scm.url}</connection>
-        <developerConnection>${scm.url}</developerConnection>
-        <url>${scm.url}</url>
-        <tag>HEAD</tag>
-    </scm>
+	<!-- URL templates -->
+	<url>${project.default.url}</url>
+	<scm>
+		<url>${project.default.scm.url}</url>
+		<connection>${project.default.scm.connection}</connection>
+		<developerConnection>${project.default.scm.developerConnection}</developerConnection>
+	</scm>
+	<distributionManagement>
+		<site>
+			<id>gebit-maven-site</id>
+			<url>${project.default.site.deployment}</url>
+		</site>
+	</distributionManagement>
+
+	<properties>
+		<project.build-name>${project.artifactId}</project.build-name>
+		<project.git.directory>gebit-build-maven/</project.git.directory>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
 
     <dependencies>
 

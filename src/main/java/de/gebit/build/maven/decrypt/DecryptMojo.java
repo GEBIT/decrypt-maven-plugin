@@ -1,4 +1,4 @@
-package com.github.davidmoten.aws.maven;
+package de.gebit.build.maven.decrypt;
 
 import java.io.File;
 import java.io.IOException;
